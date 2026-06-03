@@ -3,11 +3,80 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=https://github.com/Idenity67/zinetic-sdk">
   <title>Zinetic SDK</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+    }
+
+    main {
+      width: min(760px, 100%);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 36px;
+      line-height: 1.1;
+    }
+
+    p {
+      color: #475569;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    code, pre {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 16px;
+      border-radius: 8px;
+      background: #0f172a;
+      color: #dbeafe;
+    }
+
+    a {
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        background: #020617;
+        color: #e2e8f0;
+      }
+
+      p {
+        color: #94a3b8;
+      }
+
+      a {
+        color: #93c5fd;
+      }
+    }
+  </style>
 </head>
 <body>
-  <p>Zinetic Go SDK: <code>go get github.com/Idenity67/zinetic-sdk/zinetic@latest</code></p>
-  <p><a href="https://github.com/Idenity67/zinetic-sdk">Open the SDK repository</a></p>
+  <main>
+    <h1>Zinetic SDK</h1>
+    <p>Public distribution page for released Zinetic SDK packages.</p>
+    <pre><code>npm install @zinetic/sdk</code></pre>
+    <pre><code>import { NHIProvider, fetchWithZinetic } from "@zinetic/sdk";</code></pre>
+    <p>The Go SDK source repository is private while the public distribution path is being prepared. Enterprise customers can receive private repository access or use the REST API and OpenAPI contract through the Zinetic CLI.</p>
+    <p><a href="https://www.npmjs.com/package/@zinetic/sdk">Open npm package</a></p>
+  </main>
 </body>
 </html>
