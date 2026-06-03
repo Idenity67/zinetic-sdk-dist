@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="go-import" content="sdk.zinetic.net git https://github.com/Idenity67/zinetic-sdk-pub">
+  <meta name="go-source" content="sdk.zinetic.net https://github.com/Idenity67/zinetic-sdk-pub https://github.com/Idenity67/zinetic-sdk-pub/tree/main{/dir} https://github.com/Idenity67/zinetic-sdk-pub/blob/main{/dir}/{file}#L{line}">
   <title>Zinetic SDK</title>
   <style>
     :root {
@@ -73,9 +75,11 @@
   <main>
     <h1>Zinetic SDK</h1>
     <p>Public distribution page for released Zinetic SDK packages.</p>
+    <pre><code>go get sdk.zinetic.net/zinetic@latest</code></pre>
     <pre><code>npm install @zinetic/sdk</code></pre>
+    <pre><code>import "sdk.zinetic.net/zinetic"</code></pre>
     <pre><code>import { NHIProvider, fetchWithZinetic } from "@zinetic/sdk";</code></pre>
-    <p>The Go SDK source repository is private while the public distribution path is being prepared. Enterprise customers can receive private repository access or use the REST API and OpenAPI contract through the Zinetic CLI.</p>
+    <p>The Go SDK is available from this public distribution repository through the branded module path <code>sdk.zinetic.net</code>.</p>
     <p><a href="https://www.npmjs.com/package/@zinetic/sdk">Open npm package</a></p>
   </main>
 </body>

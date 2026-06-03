@@ -1,6 +1,41 @@
-# Zinetic SDK Distribution
+# Zinetic SDK
 
-Public customer-facing distribution page for released Zinetic SDK packages.
+Public customer-facing distribution repository for released Zinetic SDK packages.
+
+## Go SDK
+
+```sh
+go get sdk.zinetic.net/zinetic@latest
+```
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"sdk.zinetic.net/zinetic"
+)
+
+func main() {
+	client, err := zinetic.NewClient(
+		zinetic.WithBaseURL("https://api.zinetic.net"),
+		zinetic.WithTenantID(os.Getenv("ZINETIC_TENANT_ID")),
+		zinetic.WithAccessToken(os.Getenv("ZINETIC_ACCESS_TOKEN")),
+	)
+	if err != nil {
+		panic(err)
+	}
+
+	health, err := client.Health.Health(context.Background())
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(health.Status)
+}
+```
 
 ## TypeScript SDK
 
@@ -22,10 +57,6 @@ const client = fetchWithZinetic(provider);
 const response = await client("https://api.zinetic.net/api/v1/health");
 console.log(response.status);
 ```
-
-## Go SDK
-
-The Go SDK source repository is private while the public distribution path is being prepared. Enterprise customers can receive private repository access or use the REST API and OpenAPI contract through the Zinetic CLI.
 
 ## Security
 

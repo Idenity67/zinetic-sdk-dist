@@ -1,0 +1,56 @@
+package zinetic
+
+type UnsupportedOperation struct {
+	Service   string
+	Operation string
+	Reason    string
+}
+
+var PendingBackendContractOperations = []UnsupportedOperation{
+	{Service: "agent", Operation: "GetCard", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "agent", Operation: "GetDelegationChain", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "agent", Operation: "GetBaseline", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "agent", Operation: "GetSnapshot", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "agent", Operation: "Suspend", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "agent", Operation: "Reactivate", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "audit", Operation: "CreateSIEMConfig", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "audit", Operation: "ListSIEMConfigs", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "audit", Operation: "DeleteSIEMConfig", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "decision", Operation: "BatchEvaluate", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "decision", Operation: "Simulate", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "governance", Operation: "GetCertificationItems", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "governance", Operation: "GetAccessRequest", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "governance", Operation: "GetPostureScore", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "governance", Operation: "ListEntitlements", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "governance", Operation: "ListAccessBundles", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "governance", Operation: "SetResourceOwner", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "governance", Operation: "GetResourceOwner", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "pam", Operation: "GetEphemeralCredential", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "pam", Operation: "GetSessionRecording", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "pam", Operation: "GetAnalytics", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "policy", Operation: "Update", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "policy", Operation: "Delete", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "policy", Operation: "RollbackBundle", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "policy", Operation: "CreateNamedLocation", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "policy", Operation: "ListNamedLocations", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "policy", Operation: "DeleteNamedLocation", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "policy", Operation: "RequestBreakGlass", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "policy", Operation: "RevokeBreakGlass", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "policy", Operation: "ReBAcCheck", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "policy", Operation: "ReBAcWrite", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "policy", Operation: "ReBAcDelete", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "tenant", Operation: "ExportData", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "tenant", Operation: "GetExportStatus", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "tenant", Operation: "UpdateConfiguration", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "tenant", Operation: "UpdateBranding", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "token", Operation: "Revoke", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "token", Operation: "ClientCredentials", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "token", Operation: "Mint", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "webhook", Operation: "Subscribe", Reason: "tenant-scoped route support is not represented in the SDK transport yet"},
+	{Service: "webhook", Operation: "Unsubscribe", Reason: "tenant-scoped route support is not represented in the SDK transport yet"},
+	{Service: "webhook", Operation: "Get", Reason: "tenant-scoped route support is not represented in the SDK transport yet"},
+	{Service: "webhook", Operation: "List", Reason: "tenant-scoped route support is not represented in the SDK transport yet"},
+	{Service: "webhook", Operation: "ListDeliveries", Reason: "tenant-scoped route support is not represented in the SDK transport yet"},
+	{Service: "webhook", Operation: "ListDeadLetters", Reason: "route is absent from the backend OpenAPI contract"},
+	{Service: "webhook", Operation: "RetryDeadLetter", Reason: "route is absent from the backend OpenAPI contract"},
+}
