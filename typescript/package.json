@@ -1,0 +1,49 @@
+{
+  "name": "@zinetic/sdk",
+  "version": "0.2.0",
+  "description": "Zinetic SDK for secretless workload identity and credential injection",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Idenity67/zinetic-sdk-pub.git"
+  },
+  "homepage": "https://sdk.zinetic.net",
+  "bugs": {
+    "url": "https://github.com/Idenity67/zinetic-sdk-pub/issues"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepack": "npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "mysql2": "^3.0.0",
+    "pg": "^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "mysql2": {
+      "optional": true
+    },
+    "pg": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}
