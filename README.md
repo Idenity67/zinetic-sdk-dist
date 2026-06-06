@@ -40,11 +40,11 @@ func main() {
 ## TypeScript SDK
 
 ```sh
-npm install @zinetic/sdk
+npm install @zinetic-idp/sdk
 ```
 
 ```ts
-import { NHIProvider, fetchWithZinetic } from "@zinetic/sdk";
+import { NHIProvider, fetchWithZinetic } from "@zinetic-idp/sdk";
 
 const provider = new NHIProvider({
   backendURL: "https://api.zinetic.net",

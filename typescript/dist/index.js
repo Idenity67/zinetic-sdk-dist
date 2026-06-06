@@ -575,7 +575,7 @@ function normalizeHardwareMode(raw) {
 }
 function assertNodeRuntime() {
     if (typeof process === "undefined" || !process.versions?.node) {
-        throw new Error("@zinetic/sdk requires a Node.js server runtime and does not run in browsers");
+        throw new Error("@zinetic-idp/sdk requires a Node.js server runtime and does not run in browsers");
     }
 }
 function firstEnv(...names) {

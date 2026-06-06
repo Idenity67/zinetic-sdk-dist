@@ -1,9 +1,9 @@
-# @zinetic/sdk
+# @zinetic-idp/sdk
 
 TypeScript SDK for Zinetic NHI secretless credential exchange.
 
 ```ts
-import { NHIProvider, fetchWithZinetic } from "@zinetic/sdk";
+import { NHIProvider, fetchWithZinetic } from "@zinetic-idp/sdk";
 
 const provider = new NHIProvider({
   backendURL: "https://api.zinetic.net",

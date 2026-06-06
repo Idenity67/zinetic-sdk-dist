@@ -1,5 +1,5 @@
 {
-  "name": "@zinetic/sdk",
+  "name": "@zinetic-idp/sdk",
   "version": "0.2.0",
   "description": "Zinetic SDK for secretless workload identity and credential injection",
   "license": "Apache-2.0",
