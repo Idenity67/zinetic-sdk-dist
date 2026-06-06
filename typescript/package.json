@@ -1,6 +1,6 @@
 {
   "name": "@zinetic-idp/sdk",
-  "version": "0.2.0",
+  "version": "0.2.4",
   "description": "Zinetic SDK for secretless workload identity and credential injection",
   "license": "Apache-2.0",
   "type": "module",
