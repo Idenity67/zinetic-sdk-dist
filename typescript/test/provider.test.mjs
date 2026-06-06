@@ -56,9 +56,26 @@ await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
 after(() => new Promise((resolve) => server.close(resolve)));
 
 test("detectEnvironment recognizes GitLab CI", () => {
+  const previousGitHubURL = process.env.ACTIONS_ID_TOKEN_REQUEST_URL;
+  const previousGitHubToken = process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN;
+  delete process.env.ACTIONS_ID_TOKEN_REQUEST_URL;
+  delete process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN;
   process.env.GITLAB_CI = "true";
-  assert.equal(detectEnvironment(), "gitlab-ci");
-  delete process.env.GITLAB_CI;
+  try {
+    assert.equal(detectEnvironment(), "gitlab-ci");
+  } finally {
+    delete process.env.GITLAB_CI;
+    if (previousGitHubURL === undefined) {
+      delete process.env.ACTIONS_ID_TOKEN_REQUEST_URL;
+    } else {
+      process.env.ACTIONS_ID_TOKEN_REQUEST_URL = previousGitHubURL;
+    }
+    if (previousGitHubToken === undefined) {
+      delete process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN;
+    } else {
+      process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN = previousGitHubToken;
+    }
+  }
 });
 
 test("NHIProvider exchanges credentials in memory and injects fetch auth", async () => {
