@@ -14,8 +14,7 @@ import (
 type Config struct {
 	BaseURL     string
 	APIBasePath string
-	// BasePath is kept for compatibility with early SDK/CLI integration work.
-	// Prefer APIBasePath and WithAPIBasePath for new code.
+
 	BasePath   string
 	TenantID   string
 	HTTPClient *http.Client
@@ -27,18 +26,12 @@ type Config struct {
 	AttestationToken string
 
 	TokenEndpoint string
-	// TokenRefreshFormat controls automatic refresh requests sent by the
-	// transport. Supported values are "auto", "json", and "form".
+
 	TokenRefreshFormat string
 	ClientID           string
-	// ClientSecret is used for the client_credentials OAuth 2.0 grant when
-	// automatic token refresh is enabled. Zero it from memory after the first
-	// successful refresh by supplying an OnTokenRefreshed callback.
+
 	ClientSecret []byte
 
-	// OnTokenRefreshed is called after an automatic token refresh succeeds.
-	// Use it to persist the new tokens to your secret store.
-	// May be nil.
 	OnTokenRefreshed func(newAccessToken, newRefreshToken string)
 
 	MaxRetries     int

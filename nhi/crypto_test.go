@@ -65,9 +65,6 @@ func TestParseEd25519PublicKey_BareBase64PKIX(t *testing.T) {
 	}
 }
 
-// TestVerifyPolicySignature_UsesRawExpiresAt verifies that the policy signature
-// is checked against the exact expires_at string received on the wire (including
-// fractional seconds) rather than a re-formatted timestamp.
 func TestVerifyPolicySignature_UsesRawExpiresAt(t *testing.T) {
 	pub, priv, err := ed25519.GenerateKey(rand.Reader)
 	if err != nil {
@@ -107,8 +104,6 @@ func TestVerifyPolicySignature_UsesRawExpiresAt(t *testing.T) {
 		t.Fatalf("expected signature to verify against raw expires_at, got: %v", err)
 	}
 
-	// Without the raw string, reformatting the (truncated) time.Time would
-	// change the bytes and the signature must fail, proving we rely on the raw value.
 	resp.rawExpiresAt = ""
 	if err := verifyPolicySignature(resp, base64.StdEncoding.EncodeToString(pub), true); err == nil {
 		t.Fatal("expected signature verification to fail when raw expires_at is reformatted")

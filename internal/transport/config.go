@@ -19,16 +19,11 @@ type Config struct {
 	RefreshToken     string
 	AttestationToken string
 
-	// Token refresh via OAuth 2.0 refresh_token or client_credentials grant.
-	// When AccessToken expires and TokenEndpoint is non-empty, the transport
-	// automatically fetches a new token before retrying the failed request.
 	TokenEndpoint      string
 	TokenRefreshFormat string
 	ClientID           string
 	ClientSecret       []byte
 
-	// OnTokenRefreshed is called after a successful automatic token refresh so
-	// the caller can persist the new tokens. May be nil.
 	OnTokenRefreshed func(newAccessToken, newRefreshToken string)
 
 	MaxRetries     int
